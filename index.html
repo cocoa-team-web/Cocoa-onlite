@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#101827">
+  <title>Cocoa Online — Город игроков</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">COCOA TEAM · ONLINE PROTOTYPE</div>
+        <h1>Город игроков</h1>
+      </div>
+      <div class="status-wrap"><span id="statusDot" class="dot"></span><span id="status">Не подключено</span></div>
+    </header>
+
+    <section class="connect panel">
+      <label for="playerName">Имя</label>
+      <input id="playerName" maxlength="18" value="Игрок" autocomplete="nickname">
+      <button id="connectBtn">Играть онлайн</button>
+      <span id="roomCount">Игроков: 0/20</span>
+    </section>
+
+    <section class="game-wrap">
+      <canvas id="game" aria-label="Игровой город"></canvas>
+      <div class="hud"><span>🟣 Собирай кристаллы</span><span id="crystalCount">Кристаллы: 0</span></div>
+      <div id="notice" class="notice" hidden></div>
+    </section>
+
+    <section class="below">
+      <div class="panel controls">
+        <h2>Управление</h2>
+        <p>На планшете — джойстик и кнопка прыжка. На компьютере — WASD или стрелки, пробел — прыжок.</p>
+        <div class="touch-controls">
+          <div id="joystick" class="joystick"><div id="stick" class="stick"></div></div>
+          <button id="jumpBtn" class="jump">ПРЫЖОК</button>
+        </div>
+      </div>
+      <div class="panel chat-panel">
+        <h2>Чат комнаты</h2>
+        <div id="chatLog" class="chat-log" aria-live="polite"></div>
+        <form id="chatForm"><input id="chatInput" maxlength="120" placeholder="Сообщение..." autocomplete="off"><button>Отправить</button></form>
+      </div>
+    </section>
+    <footer>Прототип: серверная синхронизация позиций и чат. Не закрывай вкладку во время игры.</footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
